@@ -1,0 +1,38 @@
+.week-availability {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .availability-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    grid-column-gap: 20px;
+    grid-row-gap: 5px;
+  }
+  
+  .week-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .week-name {
+    font-weight: bold;
+    width: 40px; 
+  }
+  
+  .day {
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .available {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  
