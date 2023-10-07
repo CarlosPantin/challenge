@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import WeekAvailability from './components/WeekAvailability';
+import UserAvailability from './components/UserAvailability';
 
 function App() {
   const [selectedDaysWeek1, setSelectedDaysWeek1] = useState(Array(7).fill(false));
@@ -11,6 +12,9 @@ function App() {
   const [selectedDaysWeek6, setSelectedDaysWeek6] = useState(Array(7).fill(false));
   const [selectedDaysWeek7, setSelectedDaysWeek7] = useState(Array(7).fill(false));
 
+const availableDays = [false, false, false, false, false, false, false];
+
+  
   const saveSelectedDaysWeek1 = (days) => {
     setSelectedDaysWeek1(days);
     console.log('Selected Days Week 1 in App.js:', days);
@@ -48,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Availability App</h1>
+      <h1>My availabiltiy</h1>
       <div className="week-container">
         <WeekAvailability selectedDays={selectedDaysWeek1} onSave={saveSelectedDaysWeek1} weekName="Week 1" />
         <WeekAvailability selectedDays={selectedDaysWeek2} onSave={saveSelectedDaysWeek2} weekName="Week 2" />
@@ -58,7 +62,9 @@ function App() {
         <WeekAvailability selectedDays={selectedDaysWeek6} onSave={saveSelectedDaysWeek6} weekName="Week 6" />
         <WeekAvailability selectedDays={selectedDaysWeek7} onSave={saveSelectedDaysWeek7} weekName="Week 7" />
       </div>
-    </div>
+      <h1>User Availability</h1>
+      <UserAvailability availableDays={availableDays} selectedDays={selectedDaysWeek1} />
+                </div>
   );
 }
 

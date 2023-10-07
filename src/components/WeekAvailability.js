@@ -5,12 +5,13 @@ const WeekAvailability = ({ selectedDays, onSave, weekName }) => {
   const toggleDay = (dayIndex) => {
     const updatedSelectedDays = [...selectedDays];
     updatedSelectedDays[dayIndex] = !updatedSelectedDays[dayIndex];
-    onSave(updatedSelectedDays); // Call the onSave function to update the selected days
+    console.log('Updated Days:', updatedSelectedDays);
+    onSave(updatedSelectedDays);
   };
 
   return (
     <div className="center-container">
-      <h2>{weekName} Availability</h2>
+      <h2>{weekName}</h2>
       <div className="availability-grid">
         {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day, dayIndex) => (
           <div

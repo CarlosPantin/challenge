@@ -1,38 +1,32 @@
-.week-availability {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  .availability-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr); 
-    grid-column-gap: 20px;
-    grid-row-gap: 5px;
-  }
-  
-  .week-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-  }
-  
-  .week-name {
-    font-weight: bold;
-    width: 40px; 
-  }
-  
-  .day {
-    text-align: center;
-    cursor: pointer;
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .available {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1px;
+}
+
+h2 {
+  font-size: 16px; 
+  margin-bottom: 10px;
+}
+
+.availability-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 10px; 
+  grid-row-gap: 5px;
+}
+
+.day {
+  text-align: center;
+  cursor: pointer;
+  padding: 5px; 
+  border: 1px solid #ccc;
+  font-size: 14px; 
+}
+
+.available {
+  background-color: #4caf50;
+  color: white;
+}
