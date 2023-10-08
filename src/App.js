@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import WeekAvailability from './components/WeekAvailability';
-import UserAvailability from './components/UserAvailability';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import WeekAvailability from "./components/WeekAvailability";
+import UserAvailability from "./components/UserAvailability";
 
 function App() {
-  const numWeeks = 7; 
+  const numWeeks = 7;
   const [selectedWeek, setSelectedWeek] = useState(1);
 
-
   const initializeSelectedDays = () => {
-    const storedDays = localStorage.getItem('selectedDays');
-    return storedDays ? JSON.parse(storedDays) : Array(numWeeks).fill().map(() => Array(7).fill(false));
+    const storedDays = localStorage.getItem("selectedDays");
+    return storedDays
+      ? JSON.parse(storedDays)
+      : Array(numWeeks)
+          .fill()
+          .map(() => Array(7).fill(false));
   };
 
   const [selectedDays, setSelectedDays] = useState(initializeSelectedDays());
@@ -32,7 +35,7 @@ function App() {
   };
 
   useEffect(() => {
-    localStorage.setItem('selectedDays', JSON.stringify(selectedDays));
+    localStorage.setItem("selectedDays", JSON.stringify(selectedDays));
   }, [selectedDays]);
 
   const saveSelectedDays = (weekIndex, days) => {
@@ -55,9 +58,10 @@ function App() {
           />
         ))}
       </div>
+      <div className="separator"></div>
       <h1>User Availability</h1>
       <UserAvailability
-        selectedDays={selectedDays[selectedWeek - 1]} 
+        selectedDays={selectedDays[selectedWeek - 1]}
         selectedWeek={selectedWeek}
         onPreviousWeek={selectPreviousWeek}
         onNextWeek={selectNextWeek}
