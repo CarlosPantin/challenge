@@ -2,9 +2,8 @@
   text-align: center;
 }
 
-/* Adjust the margin between the WeekAvailability components */
 .WeekAvailability {
-  margin-bottom: 0; /* Remove margin at the bottom */
+  margin-bottom: 0; 
 }
 
-/* Your existing styles for .week-availability, .availability-grid, etc. go here */
+
